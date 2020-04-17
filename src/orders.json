@@ -1,30 +1,112 @@
 [
   {
-    "createdAt": "2020-04-12T16:17:18.085Z",
-    "_id":"7ed37b52-05af-4bff-a1e3-68c5fa54ce9a",
-    "status":"Nouveau",
-    "type":"Pro",
-    "items":[{"name":"Paracétamol","price":250,"code":"pc12","quantity":3}]
-  },
-  {
-    "createdAt":"2020-04-12T16:17:18.085Z",
-    "_id":"ff07ea4f-528c-4028-8405-950d9f30f332",
-    "status":"Nouveau",
-    "type":"Patient",
-    "items":[{"name":"Vitamine C","price":750,"code":"vitc199","quantity":2}]
-  },
-  {
-    "createdAt":"2020-04-12T16:17:18.085Z",
-    "_id":"86046a39-f04e-404e-96c1-d6c20c27fa7d",
-    "status":"Terminé",
-    "type":"Pro",
-    "items":[{"name":"Hydroxychloroquine","price":250,"code":"hcq13","quantity":5}]
-  },
-  {
-    "createdAt":"2020-04-12T16:17:18.085Z",
-    "_id":"43821073-bcd3-4b2c-9226-8656bc9c1d9f",
-    "status":"Annulé",
-    "type":"Pro",
-    "items":[{"name":"Paracétamol","price":250,"code":"pc12","quantity":3}]
+    "status":"cancelled",
+    "type":"pro",
+    "items":[{"name":"Paracétamol","price":250,"code":"pc12","quantity":3}, {
+"name":"Hydroxychloroquine","price":1250,"code":"hcq1","quantity":2
+    }],
+    "history": [{
+      "date": "2020-04-14T11:00:33.409Z",
+      "status": "new"
+    },{
+      "date": "2020-04-14T11:05:33.409Z",
+      "status": "cancelled"
+    }]
   }
+  , 
+  {
+    "status":"new",
+    "type":"pro",
+    "items":[{"name":"Paracétamol","price":250,"code":"pc12","quantity":10}],
+    "history": [{
+      "date": "2020-04-14T10:00:33.409Z",
+      "status": "new"
+    }]
+  },{
+    "status":"finished",
+    "type":"custommer",
+    "items":[{"name":"Paracétamol","price":250,"code":"pc12","quantity":3}, {
+"name":"Hydroxychloroquine","price":1250,"code":"hcq1","quantity":2
+    }],
+    "history": [{
+      "date": "2020-04-14T09:00:33.409Z",
+      "status": "new"
+    },{
+      "date": "2020-04-14T09:05:33.409Z",
+      "status": "accepted"
+    },{
+      "date": "2020-04-14T09:15:33.409Z",
+      "status": "courierPickup"
+    },{
+      "date": "2020-04-14T09:35:33.409Z",
+      "status": "courierShipped"
+    },{
+      "date": "2020-04-14T09:37:33.409Z",
+      "status": "finished"
+    }]
+  }  , 
+  {
+    "status":"new",
+    "type":"pro",
+    "items":[{"name":"Paracétamol","price":250,"code":"pc12","quantity":10}],
+    "history": [{
+      "date": "2020-04-14T10:00:33.409Z",
+      "status": "new"
+    }]
+  },{
+    "status":"finished",
+    "type":"custommer",
+    "items":[{"name":"Paracétamol","price":250,"code":"pc12","quantity":3}, {
+"name":"Hydroxychloroquine","price":1250,"code":"hcq1","quantity":2
+    }],
+    "history": [{
+      "date": "2020-04-14T09:00:33.409Z",
+      "status": "new"
+    },{
+      "date": "2020-04-14T09:05:33.409Z",
+      "status": "accepted"
+    },{
+      "date": "2020-04-14T09:15:33.409Z",
+      "status": "courierPickup"
+    },{
+      "date": "2020-04-14T09:35:33.409Z",
+      "status": "courierShipped"
+    },{
+      "date": "2020-04-14T09:37:33.409Z",
+      "status": "finished"
+    }]
+  }
+  , 
+  {
+    "status":"new",
+    "type":"pro",
+    "items":[{"name":"Paracétamol","price":250,"code":"pc12","quantity":10}],
+    "history": [{
+      "date": "2020-04-14T10:00:33.409Z",
+      "status": "new"
+    }]
+  },{
+    "status":"finished",
+    "type":"custommer",
+    "items":[{"name":"Paracétamol","price":250,"code":"pc12","quantity":3}, {
+"name":"Hydroxychloroquine","price":1250,"code":"hcq1","quantity":2
+    }],
+    "history": [{
+      "date": "2020-04-14T09:00:33.409Z",
+      "status": "new"
+    },{
+      "date": "2020-04-14T09:05:33.409Z",
+      "status": "accepted"
+    },{
+      "date": "2020-04-14T09:15:33.409Z",
+      "status": "courierPickup"
+    },{
+      "date": "2020-04-14T09:35:33.409Z",
+      "status": "courierShipped"
+    },{
+      "date": "2020-04-14T09:37:33.409Z",
+      "status": "finished"
+    }]
+  }
+
 ]

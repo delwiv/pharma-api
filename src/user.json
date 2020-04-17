@@ -1,6 +1,14 @@
 {
-  "name": "Test",
+  "name": "Louis Cathala",
   "premium": false,
-  "email": "test@mail.com",
-  "_id":  "a146ae11-77b2-490c-8728-f573ca609127"
+  "email": "louis@mail.com",
+  "password": "12345",
+  "pharmacy": {
+    "name": "Pharmacie de la Chapelle",
+    "address": "3 rue de la Chapelle",
+    "city": "Bouguenais",
+    "zipcode": "44340",
+    "geoLat": 47.18075,
+    "geoLng": -1.58597
+  }
 }

@@ -3,28 +3,35 @@ import { promises as fs } from 'fs'
 import path from 'path'
 import uuid from 'uuid'
 
-import { get, set } from '../../utils/redis.js'
+import { get, set, del } from '../../utils/redis.js'
 import { verifyToken } from '../../utils/security.js'
+import User from '../../models/User.js'
 
 const users = express.Router()
 
 users.get('/me', verifyToken, async (req, res, next) => {
-  const user = await fs.readFile(path.resolve('src', 'user.json'))
-  //  await set('')
-  res.json({ user })
-  //res.json({ error: 'moho' })
+  res.json({ user: req.user })
 })
 
 users.post('/login', async (req, res, next) => {
   const { email, password } = req.body
 
-  if (email !== 'louis@test.com' && password !== '12345')
+  const user = await User.findOne({ email })
+
+  if (!user) return res.status(400).json({ error: 'bad-creds' })
+
+  if (user.password !== password)
     return res.status(400).json({ error: 'bad-creds' })
-  const user = JSON.parse(await fs.readFile(path.resolve('src', 'user.json')))
+
   const token = uuid.v4()
   await set(token, user._id)
-  console.log({ user, token })
   res.json({ user, token })
+})
+
+users.post('/logout', async (req, res, next) => {
+  const token = req.headers.authorization.split('Bearer ')[1]
+  await del(token)
+  res.json({ error: null })
 })
 
 export default users

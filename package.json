@@ -6,16 +6,21 @@
   "author": "Delwiv <delwiv@gmail.com>",
   "license": "MIT",
   "private": true,
+  "scripts": {
+    "dev": "NODE_ENV=development nodemon src/index"
+  },
   "dependencies": {
     "bluebird": "^3.7.2",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "ioredis": "^4.16.2",
+    "mongoose": "^5.9.9",
     "morgan": "^1.10.0",
     "uuid": "^7.0.3"
   },
   "devDependencies": {
+    "nodemon": "^2.0.3",
     "prettier-standard": "^16.2.1"
   }
 }
