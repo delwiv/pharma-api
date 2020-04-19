@@ -5,12 +5,15 @@ import uuid from 'uuid'
 
 import { get, set, del } from '../../utils/redis.js'
 import { verifyToken } from '../../utils/security.js'
+import { genWSSessionId, getWSSessionId } from '../../utils/websocket.js'
 import User from '../../models/User.js'
 
 const users = express.Router()
 
 users.get('/me', verifyToken, async (req, res, next) => {
-  res.json({ user: req.user })
+  let wsSessionId = await getWSSessionId(req.user._id)
+  if (!wsSessionId) wsSessionId = await genWSSessionId(req.user._id)
+  res.json({ user: req.user, wsSessionId })
 })
 
 users.post('/login', async (req, res, next) => {
@@ -25,7 +28,8 @@ users.post('/login', async (req, res, next) => {
 
   const token = uuid.v4()
   await set(token, user._id)
-  res.json({ user, token })
+  const wsSessionId = await genWSSessionId(user._id)
+  res.json({ user, token, wsSessionId })
 })
 
 users.post('/logout', async (req, res, next) => {

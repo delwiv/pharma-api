@@ -4,11 +4,14 @@ import path from 'path'
 import bodyParser from 'body-parser'
 import morgan from 'morgan'
 
+import websocket from './utils/websocket.js'
 import api from './api/index.js'
 import { connect as connectRedis } from './utils/redis.js'
 import { connect as connectMongo } from './utils/mongo.js'
 
 const app = express()
+
+app.set('websocket', websocket)
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 
