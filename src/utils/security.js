@@ -8,7 +8,6 @@ export const verifyToken = async (req, res, next) => {
     return res.status(401).json({ error: 'Authorization header missing' })
   const token = auth.split('Bearer ')[1]
   const userId = await get(token)
-  console.log({ token, userId })
 
   if (!userId) {
     await del(token)
