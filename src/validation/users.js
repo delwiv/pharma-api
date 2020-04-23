@@ -23,6 +23,8 @@ export const createUserValidation = celebrate({
       .email()
       .required(),
     password: Joi.string().required(),
-    name: Joi.string()
+    firstName: Joi.string().required(),
+    lastName: Joi.string().required(),
+    role: Joi.string().valid('pharmacist', 'patient', 'healthPro', 'admin')
   })
 })

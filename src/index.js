@@ -13,6 +13,7 @@ import { connect as connectMongo } from './utils/mongo.js'
 
 const { PORT, NODE_ENV } = process.env
 
+console.log(`env: ${NODE_ENV}`)
 const app = express()
 
 app.set('websocket', websocket)

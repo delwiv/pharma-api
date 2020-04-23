@@ -30,7 +30,11 @@ users.get('/me', fetchMeValidation, verifyToken, async (req, res, next) => {
 users.post('/login', loginValidation, async (req, res, next) => {
   const { email, password } = req.body
 
+  console.log({ email, password })
+  const users = await User.find({})
+  console.log({ users })
   const user = await User.findOne({ email })
+  console.log({ user })
 
   if (!user) return res.status(404).json({ error: 'bad-creds' })
 

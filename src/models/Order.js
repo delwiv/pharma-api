@@ -2,7 +2,10 @@ import mongoose from 'mongoose'
 
 const Order = new mongoose.Schema(
   {
-    status: String,
+    status: {
+      type: String,
+      default: 'new'
+    },
     userId: mongoose.Schema.Types.ObjectId,
     items: [
       {

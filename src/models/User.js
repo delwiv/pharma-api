@@ -1,21 +1,16 @@
 import mongoose from 'mongoose'
-import { promises as fs } from 'fs'
-import path from 'path'
+
+import { PharmacySchema } from './Pharmacy.js'
 
 const User = new mongoose.Schema(
   {
-    name: String,
+    role: String,
+    firstName: String,
+    lastName: String,
     password: String,
     email: String,
     premium: Boolean,
-    pharmacy: {
-      name: String,
-      address: String,
-      zipcode: String,
-      city: String,
-      geoLng: Number,
-      geoLat: Number
-    }
+    pharmacy: PharmacySchema
   },
   { timestamps: true }
 )
